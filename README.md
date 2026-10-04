@@ -1,4 +1,4 @@
-# Kunergy SEO Autopilot
+# SEO Autopilot
 
 A Streamlit control panel + multi-agent system (CrewAI on Groq) that **audits, plans, writes, restyles, QA-checks and (after your approval) ships**
 SEO and premium-design improvements to https://www.kunergy.com for direct lead generation.
