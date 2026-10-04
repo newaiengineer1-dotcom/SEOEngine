@@ -1,0 +1,3 @@
+# Full install (includes the CrewAI multi-agent engine). If the build is slow/fails, use requirements-lite.txt instead.
+-r requirements-lite.txt
+crewai>=0.100
