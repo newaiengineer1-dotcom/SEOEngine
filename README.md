@@ -1,7 +1,7 @@
 # SEO Autopilot
 
 A Streamlit control panel + multi-agent system (CrewAI on Groq) that **audits, plans, writes, restyles, QA-checks and (after your approval) ships**
-SEO and premium-design improvements to https://www.kunergy.com for direct lead generation.
+SEO and premium-design improvements to https://www.company.com for direct lead generation.
 
 > **Safety model:** AI drafts, deterministic code patches, a QA gate blocks bad output, and **a human approves** every release.
 > Agents never push to your main branch: they open a *Pull Request* (or hand you a ZIP). Dry-run and a kill switch are built in.
@@ -32,7 +32,7 @@ No Groq key yet? Choose engine **offline** in the sidebar: everything works exce
 
 ## 3. Upload to GitHub and deploy on Streamlit Cloud
 
-1. `bash scripts/push_to_github.sh kunergy-seo-autopilot` (needs `git` + GitHub CLI), or create a **private** repo manually and `git push`.
+1. `bash scripts/push_to_github.sh seo-autopilot` (needs `git` + GitHub CLI), or create a **private** repo manually and `git push`.
 2. https://share.streamlit.io -> **New app** -> pick the repo, branch `main`, main file `app.py`.
 3. **Settings -> Secrets**: paste the values from `.streamlit/secrets.toml.example`. **Set `APP_PASSWORD`** (the app can open PRs on your site).
 4. If the build is slow or fails on CrewAI, replace `requirements.txt` with the content of `requirements-lite.txt`; the `direct` engine runs the same Writer -> Reviewer flow without CrewAI.
@@ -88,7 +88,7 @@ tests/ (39 tests)   .github/workflows/ (CI + weekly audit)   docs/
 ```
 
 ## 9. What has and has not been verified
-**Verified (automated tests, 39 passing, plus a CLI end-to-end run):** crawler/audit rules against a fixture modelled on kunergy.com, HTML patcher (idempotent, order-preserving),
+**Verified (automated tests, 39 passing, plus a CLI end-to-end run):** crawler/audit rules against a fixture modelled on company.com, HTML patcher (idempotent, order-preserving),
 facts guard, QA gate, schema/sitemap/page builder, theme + CSS sanitizer, patch building and blocking, ZIP round-trip, Groq retry logic (mocked), GSC CSV analysis,
 and every Streamlit page script executing against a stub (`tests/test_ui_smoke.py`).
 **Not verified (built without network access or the packages):** a real `streamlit run` render, live CrewAI runs, live Groq/PageSpeed/Search Console API calls,
